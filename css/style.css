@@ -1,0 +1,1202 @@
+body {
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    color: #313131;
+    line-height: 1.5;
+    margin: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+/* ===== Page ===== */
+
+.page {
+    overflow: hidden;
+}
+
+/* ===== Container ===== */
+
+.container {
+    width: 100%;
+    max-width: 1190px;
+    margin: 0 auto;
+    padding: 0 20px;
+    
+}
+
+/* ===== Header ===== */
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    padding-top: 14px;
+}
+.header.fixed {
+    height: auto;
+    position: fixed;
+    background-color: rgba(128, 128, 128, 0.59);
+}
+.header.fixed, .header_inner {
+    padding-top: 0;
+    padding-bottom: 0;
+    
+}
+.header_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ===== Nav ===== */
+
+.nav {
+    display: flex;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.nav_link {
+    color: #000000;
+    text-decoration: none;
+    
+    transition: color .2s linear;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 10px;
+    
+    position: relative;
+}
+.nav_link:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    position: absolute;
+    
+    opacity: 0;
+    transition: opacity .3s linear;
+    
+    background-color: #f0f0f0; 
+}
+.nav_link:hover {
+    color: #f0f0f0;
+}
+.nav_link:hover:after {
+   opacity: 1;
+}
+
+/* ====== Burger ===== */
+
+.burger {
+    width: 30px;
+    padding: 10px 0;
+    font-size: 0;
+    color: transparent;
+    
+    border: 0;
+    background: none;
+    cursor: pointer;
+    display: none;
+    
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 1;  
+}
+.burger_item {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    
+    transition: background .2s linear;
+}
+.burger.show .burger_item {
+    background: none;
+}
+.burger_item:before, 
+.burger_item:after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    
+    background-color: #fff;
+    transition: transform .2s linear;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+}
+.burger_item:before {
+    top: -8px;
+}
+.burger_item:after {
+    bottom: -8px;
+}
+.burger.show .burger_item:before {
+    transform: rotate(45deg)translateX(-2px);
+    transform-origin: left top;
+}
+.burger.show .burger_item:after {
+    transform: rotate(-45deg)translateX(-3px);
+    transform-origin: left bottom;
+}
+
+/* ===== Intro ===== */
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    width: 100%;
+    min-height: 820px;
+    position: relative;
+    height: 100vh;
+    
+    background: url(../img/%D1%84%D0%BE%D0%BD.jpeg) center no-repeat;
+    
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.intro_inner {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+.intro_suptitle {
+    font-size: 13px;
+    color: #f0f0f0;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+.intro_suptitle:after {
+    content: "";
+    display: block;
+    width: 81px;
+    height: 2px;
+    margin: 70px auto 56px;
+    background-color: #f0f0f0;
+}
+.intro_title {
+    font-size: 45px;
+    font-family: 'Gayathri', sans-serif;
+    text-transform: uppercase;
+    color: #f0f0f0;
+    margin: 52px auto;
+}
+
+/* ===== Button ===== */
+
+.btn {
+    display: inline-block;
+    vertical-align: center;
+    padding: 20px 70px;
+    text-decoration: none;
+    
+    color: #f0f0f0;
+    font-size: 13px;
+    text-transform: uppercase;
+    border: 3px solid #f0f0f0;   
+}
+.btn:hover {
+    background-color: rgba(139, 139, 139, 0.46);
+    color: #fff;
+    transition: background .4s linear, color .4s linear;  
+}
+
+/* ===== Download =====*/
+
+.download {
+   background-color: #000000;  
+}
+.download_inner {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 52px 0;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 145px;
+}
+.download_text {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.btn-download {
+    padding: 22px 51px;
+    background-color: #fff;
+    color: #000000;
+    text-transform: uppercase;
+    
+    border-radius: 100px;
+}
+.btn-download:hover {
+    transition:  background .4s linear, color .4s linear;   
+} 
+
+/* ===== Beginning =====*/
+
+.beginning {
+    display: flex;
+    flex-wrap: wrap;
+    height: 650px;   
+}
+.beginning_item {
+    width: 50%;
+    overflow: hidden;
+}
+.beginning_title {
+    font-size: 23px;
+    text-transform: uppercase;
+    color: #000000;
+    margin-top: 77px;
+    padding-left: 26px;
+    margin-bottom: 23px;  
+}
+.beginning_sub {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #8b8b8b;  
+}
+.beginning_sub:after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 1px;
+    margin-top: 23px;
+    margin-bottom: 48px;
+    background-color: #000000;
+} 
+.beginning_text {
+    font-size: 13px;
+    font-weight: 700;
+    color: #8b8b8b;
+    margin-bottom: 40px;
+    line-height: 2;
+}
+.btn-beginning {
+    border: 1px solid #000000;
+    color: #000000;
+    padding: 20px 57px;
+    margin-bottom: 80px;
+    margin-top: 15px;   
+}
+.btn-beginning:hover {
+    background-color: #dddddd; 
+    color: #000000;
+    border: none;
+    
+    transition:  background .6s linear, color .6s linear;
+}
+
+/* ===== Video =====*/
+
+.video {
+    background: url(../img/block%201.jpg) center no-repeat ;
+    
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;   
+}
+.video_color {
+    background-color: #000000;
+    opacity: 0.7;
+}
+.video_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 550px;
+}
+.video_title {
+    font-size: 23px;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 47px;
+}
+.video_icon {
+    margin: 0 auto;
+    transition: .6s all;
+}
+.video_icon:hover {
+    transform: rotate(-90deg) scale(0.6);
+}
+
+/* ===== Section ===== */
+
+.section {
+    padding: 75px 0;
+}
+.section_header {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto 80px;
+    text-align: center;  
+}
+.section_suptitle {
+    font-size: 23px;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 23px;
+}
+.section_title {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #8b8b8b;
+}
+.section_title:after {
+    content: "";
+    display: block;
+    width: 170px;
+    height: 1px;
+    
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 78px;
+    
+    background-color: #000000;
+}
+.section_text {
+    font-size: 13px;
+    font-weight: 700;
+    color: #8b8b8b;
+    line-height: 2.2;
+}
+
+/* ===== Button(portfolio) ===== */
+
+.portfolio {
+    display: flex;
+    flex-wrap: wrap;    
+}
+.button {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+.portfolio_button {
+    margin: 0 10px; 
+}
+.btn-portfolio {
+    padding: 20px 40px;
+    border: 1px solid #000000;
+    color: #000000;
+    text-transform: uppercase;
+    
+    margin-bottom: 80px;
+}
+.btn-portfolio:hover {
+    background-color: #231f20;
+    color: #fff;
+    transition:  background .6s linear, color .6s linear;    
+}
+.branding, .app-design {
+     padding: 18px 60px;   
+    } 
+.web-design, .photography {
+      padding: 18px 53px;  
+    } 
+
+/* ===== Photo ===== */
+
+.portfolio_content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.portfolio_item {
+    width: 33.33333%;
+    padding-bottom: 30px;
+    margin-left:  -30px;  
+}
+.portfolio_photo {
+    display: block;
+    width: 370px;
+    height:310px;
+    transition: 1s;
+}
+.portfolio_photo:hover {
+    transform: scale(0.9);
+}
+.btn-information {
+    margin: 0 auto;
+    margin-top: 80px;
+    padding: 20px 60px;   
+}
+
+/* ===== Quotes =====*/
+
+.quotes {
+    background: url(../img/block%202.jpg) center no-repeat ;
+    
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;   
+}
+.quotes_color {
+    background-color: #000000;
+    opacity: 0.7;
+}
+.quotes_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 405px;
+}
+.quotes_icon {
+    margin: 0 auto;
+    margin-bottom: 79px;
+}
+.quotes_title {
+    font-size: 17px;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 47px;
+}
+.quotes_subtitle {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+}
+
+/* ===== Team ===== */
+
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.team_item {
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+.team_img {
+    display: block;
+    max-width: 100%;
+    width: 228px;
+    height: auto;
+    margin-bottom: 20px;
+    position: relative;  
+}
+.team_item:hover .team_content {
+    opacity: 1;
+}
+.team_content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 28px 0;
+    margin-top: -21px;
+    
+    opacity: 0;
+    background-color: #333;
+    transition: opacity .7s linear;
+}
+.team_name {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+}
+/* ===== Description ===== */
+
+.description {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 28px;
+}
+.description_item {
+    width: 33.33333%;
+}
+.description_title {
+    font-size: 17px;
+    color: #000000;
+    text-transform: uppercase;
+    
+    margin-bottom: 50px;
+    padding-left: 13px;
+}
+.description_text {
+    font-size: 13px;
+    font-weight: 700;
+    color: #8b8b8b;
+    line-height: 2.2;
+    margin: 0 16px;  
+}
+
+/* ===== Subscription ===== */
+
+.subscription {
+    background-color: #000000;
+}
+.subscription_inner {
+    padding: 75px 0;
+    margin: 0 145px;
+}
+.subscription_text {
+    font-size: 17px;
+    color: #fff;
+    
+    margin-left: 35px;
+    margin-bottom: 31px;
+    text-transform: uppercase;
+}
+.subscription_form {
+    max-width: 771px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.subscription_input {
+    width: 100%;
+    height: 50px;
+    padding: 16px;
+    margin-right: 26px;
+    background: #000000;
+    border: 1px solid #fff;
+    
+    font-size: 13px;
+    background: #000000;
+    text-transform: uppercase;
+    line-height: 1.1;
+    color: #fff;
+    cursor: pointer;
+}
+.subscription_btn {
+    padding: 19px 58px;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #000000;
+    cursor: pointer; 
+}
+.subscription_btn:hover {
+   transform: rotateX(35deg);
+   transition: .7s all;   
+}
+
+/* ===== Contact ===== */
+
+.contact {
+    display: flex;
+    flex-wrap: wrap;  
+}
+.contact_item {
+    width: 33.33333%;
+    text-align: center;   
+}
+.contact_img {
+    margin-bottom: 26px;
+}
+.contact_text {
+    font-size: 13px;
+    font-weight: 700;
+    color: #8b8b8b;
+    text-decoration: none;
+}
+.contact_form {
+    margin-top: 78px;
+    width: 50%;
+    margin-left: -12px;
+    margin-right: 12px; 
+}
+
+/* ===== Form ===== */
+
+fieldset {
+    border: none;
+}
+.contact_subject, .contact_name, .contact_email {
+    width: 100%;
+    height: 50px;
+    padding: 18px;
+    margin-bottom: 30px;
+    border: 1px solid #8b8b8b;
+    font-size: 13px;
+    color: #8b8b8b;
+}
+
+/* ===== Message ===== */
+
+.contact_message {
+    width: 50%;   
+}
+.message {
+    margin-top: 83px;
+    margin-bottom: 36px;
+    width: 100%;
+    height: 210px;
+    padding: 18px;
+    border: 1px solid #8b8b8b;
+    font-size: 13px;
+    color: #8b8b8b;
+    font-family: 'Montserrat', sans-serif;
+}
+.btn-message {
+    padding: 20px 65px;
+    background: #000000;
+    border: none;
+    float: right;
+    cursor: pointer;  
+}
+.btn-message:hover {
+    background-color: #c4c4c4;
+    color: #000000;
+    transition: background .6s linear color .6s linear;   
+}
+
+/* ===== Footer ===== */
+
+.footer {
+    background-color: #000000;
+}
+.footer_inner {
+    text-align: center;
+    padding: 80px 0 86px;
+}
+.footer_img {
+    margin-bottom: 52px;   
+}
+a {
+    text-decoration: none;
+}
+.social_icon {
+    width: 17px;
+    height: 18px;
+    margin:0 33px;
+    margin-bottom: 40px;
+}
+.copyright {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    margin-left: 0 auto;   
+}
+
+/* ========== Media ========== */
+/* ===== Media(1200px) ===== */
+
+@media (max-width: 1200px) {
+
+/* ===== Intro ===== */
+    
+.intro_suptitle {
+    font-size: 20px;
+    letter-spacing: 0;
+    }
+.intro_title {
+    font-size: 55px;
+    
+    }  
+/* ===== Photo(portfolio) ===== */
+    
+.portfolio_photo {
+    width: 100%;
+    }    
+/* ===== Team ===== */
+    
+.team {
+    margin: 0 100px;
+    }  
+.team_item {
+    width: 50%;
+    } 
+.team_img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    position: relative;    
+    }   
+}
+
+/* ===== Media(992px) ===== */
+
+@media (max-width: 992px) {
+
+/* ===== Intro ===== */
+    
+.intro {
+    height:  auto;
+    }    
+/* ===== Download ===== */
+    
+.download_inner {
+    margin: 0 56px;
+    }
+/* ===== Beginning ===== */
+    
+.beginning {
+    height: auto;   
+    }
+.beginning_item {
+    width: 100%;
+    text-align: center;
+    }
+.beginning_sub:after {
+    margin: 40px auto;
+    } 
+.beginning_title {
+    padding-left: 0;   
+    }    
+.beginning_text {
+    font-size: 15px;
+    margin: 20px 74px;
+    }
+/* ===== Video ===== */
+    
+.video_item {
+    height: 400px;
+    }
+/* ===== Photo(portfolio) ===== */
+    
+.portfolio_photo {
+    width: 100%;
+    height: auto;
+    }     
+/* ===== Quotes ===== */
+    
+.quotes_item {
+    height: 370px; 
+    }    
+/* ===== Footer ===== */
+    
+.footer_inner {
+    padding: 40px 0 55px;   
+    }
+} 
+
+/* ===== Media(932px) ===== */
+
+@media (max-width: 932px) {
+  
+/* ===== Button(portfolio) ===== */
+    
+.portfolio_button {
+    width: 31%;
+    justify-content: center;
+    margin: 0 auto;
+    }
+.btn-portfolio {
+    margin-bottom: 47px;
+    }  
+/* ===== Photo(portfolio) ===== */
+    
+.portfolio_photo {
+    width: 100%;
+    height: 200px;
+    }        
+} 
+
+/* ===== Media(789px) ===== */
+
+@media (max-width: 789px) {
+    
+/* ===== Nav ===== */
+    
+.nav {
+    display: none;
+    width: 100%;
+    text-align: right;
+    background-color: rgba(128, 128, 128, 0.59); 
+
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    } 
+.nav.show {
+    display: flex;
+    }   
+.nav_link {
+    padding: 7px 10px;
+    } 
+/* ===== Burger ===== */
+    
+.burger {
+    display: block;
+    } 
+/* ===== Intro ===== */
+    
+.intro_suptitle {
+    font-size: 17px;
+    letter-spacing: 1px;
+    }
+.intro_title {
+    font-size: 46px;
+    } 
+.btn {
+    padding: 10px 20px;   
+    }    
+/* ===== Download ===== */
+    
+.download_inner {
+    display: inline-block;
+    padding: 61px 0;    
+    }  
+.download_text {
+    font-size: 14px;
+    margin-bottom: 20px;
+    } 
+.btn-download {
+    font-size: 12px;
+    padding: 10px 20px;   
+    } 
+/* ===== Beginning===== */
+    
+.beginning_title {
+    padding-left: 0;   
+    } 
+.beginning_text {
+    font-size: 13px;  
+    } 
+/* ===== Video ===== */
+    
+.video_item {
+    height: 300px;    
+    }    
+/* ===== Section ===== */
+    
+.section_title:after {
+    margin-bottom: 43px;   
+    } 
+.section_text {
+    margin: 0 69px;
+    }   
+/* ===== Button(portfolio) ===== */
+    
+.portfolio_button {
+    width: 34%;
+    margin: 0 auto;
+    margin-right: 30px;
+    }   
+.btn-portfolio {
+    padding: 18px 50px;
+    margin-bottom: 20px;
+    }
+.branding, .app-design {
+    padding: 18px 59px;   
+    } 
+.web-design {
+    padding: 18px 53px;  
+    } 
+/* ===== Photo(portfolio) =====*/
+    
+.portfolio_item {
+    width: 50%; 
+    } 
+.portfolio_photo {
+    width: 100%;
+    height: auto;
+    }   
+.btn-information {
+    margin-top: 40px;
+    margin-bottom: 0;
+    } 
+/* ===== Team ===== */
+    
+.team {
+    justify-content: center;
+    margin: 0 30px;
+    }
+/* ===== Description ===== */
+    
+.description_item {
+    width: 100%;
+    } 
+.description_title {
+    padding-left: 18px;
+    margin-bottom: 10px;
+    }  
+.description_text {
+    margin-bottom: 25px;  
+    }     
+/* ===== Subscription ===== */
+    
+.subscription_text {
+    margin-left: 0;   
+    }  
+.subscription_inner {
+    margin: 0 101px; 
+    padding: 31px 0;
+    } 
+.subscription_text {
+    font-size: 16px;
+    margin-bottom: 20px;
+    } 
+.subscription_form {
+    flex-wrap: wrap;
+    }  
+.subscription_input {
+    margin-bottom: 15px;
+    font-size: 11px;
+    }  
+.subscription_btn {
+    padding: 10px 15px;
+    font-size: 11px;
+    }     
+/* ===== Footer ===== */
+    
+.footer_inner {
+    padding: 20px 0 30px;   
+    }
+.social_icon {
+    width: 14px;
+    height: 16px;
+    }
+.copyright {
+    font-size: 11px;   
+    }    
+}
+
+/* ===== Media(568px) ===== */
+
+@media (max-width: 568px) {
+
+/* ===== Header ===== */
+    
+.header_photo {
+    width: 150px;
+    } 
+/* ===== Intro ===== */
+   
+.intro_suptitle {
+    font-size: 14px;
+    } 
+.intro_suptitle:after {
+    margin: 40px auto 30px;
+    }   
+.intro_title {
+    font-size: 28px;   
+    } 
+.btn {
+    padding: 10px 31px;   
+    }    
+/* ===== Download ===== */ 
+    
+.download_text {
+    font-size: 11px;
+    }    
+.btn-download {
+    padding: 7px 21px; 
+    } 
+/* ===== Beginning===== */
+    
+.beginning_text {
+    margin: 30px;
+    }    
+.btn-beginning { 
+    margin-bottom: 32px;
+    }   
+.beginning_photo {
+    width: 248px;
+    height: 281px;
+    } 
+/* ===== Section ===== */
+    
+.section {
+    padding: 30px 0;   
+    }
+.section_header {
+    margin: 40px 0;  
+    }
+.section_title:after {
+    margin-bottom: 17px;   
+    }    
+/* ===== Button(portfolio) ===== */
+    
+.portfolio_button {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    } 
+.branding {
+    padding: 14px 70px;   
+    } 
+.photography {
+    padding: 14px 55px;   
+    }      
+.app-design, .web-design {
+    padding: 14px 66px;   
+    } 
+/* ===== Photo(portfolio) ===== */
+    
+.portfolio_item {
+    width: 100%;
+    margin-left: 0;
+    }         
+.btn-information {
+    margin-top: 20px;    
+    }  
+/* ===== Quotes ===== */
+    
+.quotes_item {
+    height: 300px;  
+    }   
+.quotes_icon {
+    width: 54px; 
+    margin-bottom: 39px;
+    }    
+/* ===== Team ===== */
+    
+.team_item {
+    width: 100%;
+    margin: 0 -9px 20px;
+    }  
+/* ===== Subscription ===== */
+    
+.subscription_inner {
+    margin: 0 30px;   
+    }    
+.subscription_input {
+    width: 100%;
+    height: 30px;
+    } 
+.subscription_btn {
+    padding: 12px 33px;   
+    }
+/* ===== Contact ===== */
+    
+.contact_item {
+    width: 100%;
+    margin-bottom: 20px;
+    }
+.contact_form {
+    width: 100%;
+    margin: 0;
+    } 
+/* ===== Message ===== */
+    
+.contact_message {
+    width: 95%;
+    margin-left: 13px;
+    display: flex;
+    flex-wrap: wrap;
+    }    
+.message {
+    margin-top: 0;
+    height: 105px;  
+    } 
+.btn-message {
+    font-size: 11px;
+    padding: 13px 30px;
+    }   
+/* ===== Footer ===== */
+    
+.footer_img {
+    width: 46px; 
+    margin-bottom: 22px;
+    }  
+.social_icon {
+    width: 12px;
+    height: 11px;
+    margin: 0 15px 24px;
+    }    
+}
+
+/* ===== Media(375px) ===== */
+
+@media (max-width: 375px) {
+    
+/* ===== Intro ===== */
+    
+.intro_title {    
+    margin: 89px auto;
+    } 
+/* ===== Download ===== */
+    
+.btn-download {
+    padding: 7px 3px; 
+    font-size: 9px;
+    }  
+/* ===== Beginning ====== */
+    
+.beginning_title {
+    font-size: 20px;
+    margin: 50px 0 13px;
+    }  
+.beginning_sub:after {
+    margin: 23px auto; 
+    } 
+.beginning_text {
+    margin: 20px 2px; 
+    }   
+.btn-beginning {
+    padding: 7px 17px; 
+    } 
+/* ===== Video ===== */
+    
+.video_item  {
+    height: 230px;  
+    } 
+.video_title {
+    font-size: 17px;
+    margin-bottom: 8px;
+    } 
+.video_icon {
+    width: 54px;
+    } 
+/* ===== Section =====*/
+    
+.section_header {
+    margin: 11px 0; 
+    }
+.section_suptitle {
+    font-size: 20px;
+    margin-bottom: 13px;
+    } 
+.section_text {
+    margin: 0 10px 20px; 
+    } 
+/* ===== Quotes ===== */
+    
+.quotes_item {
+    height: 250px;  
+    }    
+.quotes_title {
+    font-size: 13px;
+    margin: 0 -9px 30px;
+    }
+/* ===== Team ===== */
+    
+.team {
+    margin: 0 -40px;    
+    }
+/* ===== Subscription ===== */
+    
+.subscription_inner {
+    margin: 0 12px; 
+    }
+}   
+  
