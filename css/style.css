@@ -599,6 +599,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 19px 58px;
     font-size: 13px;
     text-transform: uppercase;
+    text-align:center;
     color: #000000;
     cursor: pointer; 
 }
